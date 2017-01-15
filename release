@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-cat <<EOF
----
-config_vars:
-PATH: $PATH:/app/.heroku/vendor/lib/libta
-EOF
