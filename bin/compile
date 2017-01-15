@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+echo "-----> Installing TALIB"
+# change to the the BUILD_DIR ($1)
+cd $1
+# download the binary (-O) silently (-s)
+curl https://github.com/zeljkosecan/libta/blob/master/libta.tar.gz -s -O -ssl3
+# make a directory to untar (like unzip) the binary
+set-env LIBRARY_PATH '/app/.heroku/vendor/lib:/app/.heroku/python/lib:/app/.heroku/vendor/lib/libta:$LIBRARY_PATH'
+set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lib:/app/.heroku/python/lib:/app/.heroku/vendor/lib/libta:$LD_LIBRARY_PATH'
+mkdir -p /app/.heroku/vendor/lib/libta
+# untar the binary to the directory we want
+tar -C vendor/talib -xvf libta.tar.gz
+
+Edit detect.
+
+
+#!/usr/bin/env bash
+echo "TALIB"
+exit 0
