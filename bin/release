@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "----->release TALIB"
 cat <<EOF
 ---
 config_vars:
